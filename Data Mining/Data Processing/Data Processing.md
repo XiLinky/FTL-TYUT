@@ -1,7 +1,7 @@
 ## Pandas Learning
 Datawhale joyful-pandas: [joyful-pandas(熊猫书)](https://github.com/datawhalechina/joyful-pandas)
 #### Tutorial Introduction：
-<img src="../images/joyful-pandas.png" width="50%"/>
+<img src="../images/joyful-pandas.png" width="80%"/>
 
 ---
 
