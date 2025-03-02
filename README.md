@@ -1,5 +1,8 @@
 # FTL-TYUT 
 ## For the Learners AND To My Hustle-Fueled Odyssey Toward Graduate Studies  
+
+[中文README](README-zh.md)
+
 # AI Technology Codebase 🚀  
 [![GitHub Stars](https://img.shields.io/github/stars/yourusername/reponame?style=social)](https://github.com/yourusername/reponame)  
 [![License](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)  
