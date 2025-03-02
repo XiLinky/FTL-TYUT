@@ -100,7 +100,7 @@ Exclusions:
   - DeepSee (`DeepSeek v3`/`DeepSeek R1`)  
   - Others  
 
-### 🧰 Utilities  
+### 🧰 Others  
 - **Generative Models**:  
   - CIFAR10 Training (`Diffusion`)  
   - GAN Implementation  
