@@ -110,17 +110,6 @@ Exclusions:
 - **Graph Networks**:  
   - GCN Molecular Property Prediction  
 
-## 📜 Academic Integrity Pact  
-This codebase adheres to the **Academic Integrity Addendum to the MIT License**:  
-```text  
-Copyright (c) 2025 [Wenkai Zhao]  
+## 📜 LICENSE
 
-Licensed under MIT License with additional constraints:  
-1. Prohibited from direct usage in:  
-   - Academic/commercial competitions without algorithm/parameter modifications  
-   - Production systems without explicit authorization  
-2. Derivative works must:  
-   - Cite original source in technical reports for competition usage  
-   - Obtain written permission for commercial applications  
-
-This amendment safeguards academic innovation ecosystems. Final interpretation resides with the author.  
+<img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>
