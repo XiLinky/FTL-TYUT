@@ -1,5 +1,5 @@
 # FTL-TYUT
-## For the learners AND To My Hustle-Fueled Odyssey Toward Graduate Studies
+### For the learners AND To My Hustle-Fueled Odyssey Toward Graduate Studies
 # AI技术代码分享 🚀
 [![GitHub Stars](https://img.shields.io/github/stars/yourusername/reponame?style=social)](https://github.com/yourusername/reponame)
 [![License](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
