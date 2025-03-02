@@ -1,19 +1,17 @@
 # FTL-TYUT
 ## For the learners AND To My Hustle-Fueled Odyssey Toward Graduate Studies
-# AI全栈技术导航库 🚀
+# AI技术代码分享 🚀
 [![GitHub Stars](https://img.shields.io/github/stars/yourusername/reponame?style=social)](https://github.com/yourusername/reponame)
 [![License](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 
-<p align="center">
-  <img src="https://via.placeholder.com/800x300?text=AI+Learning+Path" alt="Banner">
-</p>
-
 ## 🌟 项目愿景
 为深度学习自学者打造**模块化技术栈导航**，通过七大核心领域的经典/前沿模型实现，构建从理论到实践的认知闭环。
+
 每个项目均包含：
 - 🧠 模型架构解读
 - ⚡ 极简实现代码
 - 📈 训练/推理脚本
+
 未包含：
 - 📚 数据集下载(涉及比赛数据和未公开数据)
 - 📦 环境配置(时间跨度大，环境过多)
@@ -37,7 +35,7 @@
   - 泰坦尼克生存预测（`Decision Tree`/`Random Forest`）
   - 广告分类（`PCA`/`XGBoost`）
 - **聚类分析**：
-  - 航空客户分群（`KMeans++`/`DBSCAN`）
+  - 航空客户分群（`KMeans`/`KMeans++`/`DBSCAN`）
 - **图像处理**：
   - 图像去噪（`Markov`）
 
@@ -99,7 +97,7 @@
   - DeepSeek（`DeepSeek v3`/`DeepSeek R1`）
   - 其他
 
-### 🧰 工具箱
+### 🧰 其他
 - **生成模型**：
   - CIFAR10训练（`Diffusion`）
   - GAN实战
@@ -108,3 +106,19 @@
   - EchoMimic数字人部署
 - **图网络**：
   - GCN分子属性预测
+
+## 📜 学术诚信公约
+
+本仓库代码遵循 **知识共享-学术诚信特别条款**：
+```text
+Copyright (c) 2025 [Wenkai Zhao]
+
+根据MIT License授权，但附加以下约束：
+1. 禁止未经算法/参数调整直接用于：
+   - 任何形式的学术/商业竞赛提交
+   - 生产环境商业部署
+2. 基于本项目的二次开发成果：
+   - 若涉及竞赛需在技术报告中明确标注原始代码来源
+   - 若用于商业场景需获得作者书面授权
+
+本授权条款旨在维护学术共同体创新生态，具体解释权归作者所有。
