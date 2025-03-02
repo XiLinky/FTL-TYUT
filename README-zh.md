@@ -109,16 +109,4 @@
 
 ## 📜 学术诚信公约
 
-本仓库代码遵循 **知识共享-学术诚信特别条款**：
-```text
-Copyright (c) 2025 [Wenkai Zhao]
-
-根据MIT License授权，但附加以下约束：
-1. 禁止未经算法/参数调整直接用于：
-   - 任何形式的学术/商业竞赛提交
-   - 生产环境商业部署
-2. 基于本项目的二次开发成果：
-   - 若涉及竞赛需在技术报告中明确标注原始代码来源
-   - 若用于商业场景需获得作者书面授权
-
-本授权条款旨在维护学术共同体创新生态，具体解释权归作者所有。
+<img alt="知识共享许可协议" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a><br />本作品采用<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>进行许可
