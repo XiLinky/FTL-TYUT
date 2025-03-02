@@ -1,5 +1,5 @@
 # FTL-TYUT 
-## For the Learners AND To My Hustle-Fueled Odyssey Toward Graduate Studies  
+### For the Learners AND To My Hustle-Fueled Odyssey Toward Graduate Studies  
 
 [中文README](README-zh.md)
 
