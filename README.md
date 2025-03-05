@@ -3,8 +3,14 @@
 
 [中文README](README-zh.md)
 
+[![Active Development](https://img.shields.io/badge/status-active%20development-brightgreen)](https://github.com/XiLinky/repo)
+[![Last Commit](https://img.shields.io/github/last-commit/yourusername/repo)](https://github.com/XiLinky/repo)
+
+🔨 **Active Development Notice**  
+This repository is under continuous improvement. Recent updates include [Data Mining].Feel free to open an issue for suggestions!
+
 # AI Technology Codebase 🚀  
-[![GitHub Stars](https://img.shields.io/github/stars/yourusername/reponame?style=social)](https://github.com/yourusername/reponame)  
+[![GitHub Stars](https://img.shields.io/github/stars/yourusername/reponame?style=social)](https://github.com/XiLinky/reponame)  
 [![License](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)  
 
 ## 🌟 Project Vision  
