@@ -1,7 +1,14 @@
 # FTL-TYUT
 ### For the learners AND To My Hustle-Fueled Odyssey Toward Graduate Studies
+
+[![活跃开发中](https://img.shields.io/badge/status-active%20development-brightgreen)](https://github.com/XiLinky/repo)
+[![最后提交](https://img.shields.io/github/last-commit/yourusername/repo)](https://github.com/XiLinky/repo)
+
+🔨 **活跃开发声明**  
+本仓库正在持续改进中。近期更新包括 [Data Mining]。欢迎提交 Issue 提出建议！
+
 # AI技术代码分享 🚀
-[![GitHub Stars](https://img.shields.io/github/stars/yourusername/reponame?style=social)](https://github.com/yourusername/reponame)
+[![GitHub Stars](https://img.shields.io/github/stars/yourusername/reponame?style=social)](https://github.com/XiLinky/reponame)
 [![License](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 
 ## 🌟 项目愿景
