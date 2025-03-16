@@ -73,7 +73,9 @@ loss = ((per_token_loss * completion_mask).sum(dim=1) / completion_mask.sum(dim=
 
 第4步是对组内每个样本的reward进行标准化，第5步时对组内的标准化后的reward求和。那么对于标准化公式(ri - mean) / std 求和，就正好分子为0了
 
-换而言之，其实GRPO Loss就等于βKL。(https://github.com/huggingface/trl/issues/2703#issuecomment-2625274839)只不过advantages可以在梯度计算中保留。用loss计算梯度，loss为0不代表梯度也为0
+换而言之，其实GRPO Loss就等于βKL。(https://github.com/huggingface/trl/issues/2703#issuecomment-2625274839)
+
+只不过advantages可以在梯度计算中保留。用loss计算梯度，loss为0不代表梯度也为0
 
 # Datawhale-R1 复现文件
 
