@@ -7,6 +7,74 @@ trl==0.15.2
 如果直接pip install unsloth会报错，因为新版本的unsloth-zoo定义compute_dtype时赋值有问题
 其余的跟着教程练就行
 
+## 关于loss为0的问题
+
+loss 为 0 可以确定是 GRPO 本身的特性
+
+GRPO的loss代码：
+```python
+per_token_loss = torch.exp(per_token_logps - per_token_logps.detach()) * advantages.unsqueeze(1)
+per_token_loss = -(per_token_loss - self.beta * per_token_kl)
+loss = ((per_token_loss * completion_mask).sum(dim=1) / completion_mask.sum(dim=1)).mean()
+```
+
+由于.detach()只是返回一个共享存储位置但没有梯度的tensor，所以per_token_logps - per_token_logps.detach()为0，torch.exp(per_token_logps - per_token_logps.detach())等于1，因此，此时的per_token_loss等于advantages
+
+只不过如果计算这一步的梯度的话，per_token_logps.detach()就要被看做常数C了，所以整体是有per_token_logps梯度的
+
+### 第一步的KL为什么是0？
+```python
+with unwrap_model_for_generation(self.model, self.accelerator) as unwrapped_model:
+    prompt_completion_ids = unwrapped_model.generate(
+        prompt_ids, attention_mask=prompt_mask, generation_config=self.generation_config
+    )
+ref_per_token_logps = self._get_per_token_logps(
+    self.ref_model, prompt_completion_ids, attention_mask, logits_to_keep
+)
+...
+input_ids = torch.cat([prompt_ids, completion_ids], dim=1)
+per_token_logps = self._get_per_token_logps(model, input_ids, attention_mask, logits_to_keep)
+# Compute the KL divergence between the model and the reference model
+ref_per_token_logps = inputs["ref_per_token_logps"]
+per_token_kl = torch.exp(ref_per_token_logps - per_token_logps) - (ref_per_token_logps - per_token_logps) - 1
+```
+
+在第一步的时候，actor模型此时权重与参考模型ref_model一致，所以per_token_logps = ref_per_token_logps ，代入公式中，所以KL=0
+
+### 第一步的advantages为什么是0？
+```python
+# Sum the rewards from all reward functions
+rewards = rewards_per_func.sum(dim=1)
+
+# Compute grouped-wise rewards
+mean_grouped_rewards = rewards.view(-1, self.num_generations).mean(dim=1)
+std_grouped_rewards = rewards.view(-1, self.num_generations).std(dim=1)
+
+# Normalize the rewards to compute the advantages
+mean_grouped_rewards = mean_grouped_rewards.repeat_interleave(self.num_generations, dim=0)
+std_grouped_rewards = std_grouped_rewards.repeat_interleave(self.num_generations, dim=0)
+advantages = (rewards - mean_grouped_rewards) / (std_grouped_rewards + 1e-4)
+
+# Slice to keep only the local part of the data
+process_slice = slice(
+    self.accelerator.process_index * len(prompts),
+    (self.accelerator.process_index + 1) * len(prompts),
+)
+advantages = advantages[process_slice]
+
+...
+
+# x - x.detach() allows for preserving gradients from x
+advantages = inputs["advantages"]
+per_token_loss = torch.exp(per_token_logps - per_token_logps.detach()) * advantages.unsqueeze(1)
+per_token_loss = -(per_token_loss - self.beta * per_token_kl)
+loss = ((per_token_loss * completion_mask).sum(dim=1) / completion_mask.sum(dim=1)).mean()
+```
+
+第4步是对组内每个样本的reward进行标准化，第5步时对组内的标准化后的reward求和。那么对于标准化公式(ri - mean) / std 求和，就正好分子为0了
+
+换而言之，其实GRPO Loss就等于βKL。(https://github.com/huggingface/trl/issues/2703#issuecomment-2625274839)只不过advantages可以在梯度计算中保留。用loss计算梯度，loss为0不代表梯度也为0
+
 # Datawhale-R1 复现文件
 
 # 单机多卡复现
